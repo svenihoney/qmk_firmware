@@ -36,7 +36,7 @@ enum sofle_layers {
 #define TAB_RIGHT  LSFT(LCMD(KC_RIGHT_BRACKET))
 
 enum custom_keycodes {
-    KC_LOWER,
+    KC_LOWER = SAFE_RANGE,
     KC_RAISE,
     KC_ADJUST,
     KC_PRVWD,
