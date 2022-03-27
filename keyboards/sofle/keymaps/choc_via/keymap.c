@@ -24,7 +24,6 @@ enum sofle_layers {
 };
 
 #include "oled.c"
-#include "encoder.c"
 
 #define LOWER  MO(_LOWER)
 #define RAISE  MO(_RAISE)
