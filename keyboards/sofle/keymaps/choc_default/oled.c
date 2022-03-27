@@ -28,17 +28,8 @@ static void render_logo(void) {
 }
 
 void write_int_ln(const char* prefix, uint8_t value) {
-    const char* SPACE = PSTR(" ");
-    char        buffer[4];
-    itoa(value, buffer, 10);
     oled_write_P(prefix, false);
-    if (value < 10) {
-        oled_write_P(SPACE, false);
-        oled_write_P(SPACE, false);
-    } else if (value < 100) {
-        oled_write_P(SPACE, false);
-    }
-    oled_write(buffer, false);
+    oled_write(get_u8_str(value, ' '), false);
 }
 
 static void print_status_narrow(void) {
