@@ -15,6 +15,8 @@
  */
 
 #pragma once
+
+#include "sofle.h"
 #include "quantum.h"
 
 #define LAYOUT( \
