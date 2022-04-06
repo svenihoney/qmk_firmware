@@ -12,11 +12,11 @@ More details about the keyboard and build guide: [Sofle Choc Build GUide](https:
 
 Make example for this keyboard (after setting up your build environment):
 
-    make sofle/choc:default
+    make sofle/choc:choc_default
 
 Flashing example for this keyboard:
 
-    make sofle/choc:default:flash
+    make sofle/choc:choc_default:flash
 
 Press reset button twice on the keyboard when asked.
 
