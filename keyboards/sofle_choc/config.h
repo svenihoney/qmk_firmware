@@ -16,6 +16,8 @@
 
 #pragma once
 
+#include "config_common.h"
+
 // USB Device descriptor parameter
 #define VENDOR_ID       0xFC32 // Copied from sofle/rev1 so that Via works
 #define PRODUCT_ID      0x0287 // Copied from sofle/rev1 so that Via works
