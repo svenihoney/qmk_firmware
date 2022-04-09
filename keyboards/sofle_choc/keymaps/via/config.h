@@ -37,10 +37,8 @@
 
 // Animations
 // Uncomment any that you want to try. Limited by
-// space on the microcontroller. If you are not using
-// Via you can set VIA_ENABLE = no to free additional
-// space for animations. The defines below mirror the
-// order they animations will cycle through.
+// space on the microcontroller. The defines below
+// mirror the order they animations will cycle through.
 
 // These modes don’t require any additional defines
 // #define ENABLE_RGB_MATRIX_ALPHAS_MODS
