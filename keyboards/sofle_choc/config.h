@@ -18,13 +18,6 @@
 
 #include "config_common.h"
 
-// USB Device descriptor parameter
-#define VENDOR_ID       0xFC32 // Copied from sofle/rev1 so that Via works
-#define PRODUCT_ID      0x0287 // Copied from sofle/rev1 so that Via works
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    Brian Low
-#define PRODUCT         Sofle Choc
-
 // Key matrix size
 // Rows are doubled-up
 #define MATRIX_ROWS 10

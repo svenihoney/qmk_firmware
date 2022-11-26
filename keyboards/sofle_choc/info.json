@@ -2,6 +2,12 @@
     "keyboard_name": "Sofle Choc",
     "url": "https://github.com/josefadamcik/SofleKeyboard",
     "maintainer": "Brian Low <github@brianlow.com>",
+    "manufacturer": "Brian Low",
+    "usb": {
+      "vid": "0xFC32",
+      "pid": "0x0287",
+      "device_version": "0.0.1"
+    },
     "layouts": {
         "LAYOUT": {
             "layout": [
