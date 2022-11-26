@@ -37,7 +37,6 @@
 #define ENCODERS_PAD_B_RIGHT { F5 }
 
 // Communication between sides
-#define USE_SERIAL
 #define SOFT_SERIAL_PIN D2
 
 #ifdef RGB_MATRIX_ENABLE
