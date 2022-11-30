@@ -42,6 +42,6 @@
 #ifdef RGB_MATRIX_ENABLE
 #define RGB_DI_PIN D3
 #define RGBLED_NUM 29
-#define DRIVER_LED_TOTAL 58
+#define RGB_MATRIX_LED_COUNT 58
 #define RGB_MATRIX_SPLIT { 29, 29 }
 #endif
