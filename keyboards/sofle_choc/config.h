@@ -23,8 +23,6 @@
 #define MATRIX_COL_PINS { F6, F7, B1, B3, B2, B6 }
 #define DIODE_DIRECTION COL2ROW
 
-#define DEBOUNCE 5
-
 // Encoder support
 #define ENCODERS_PAD_A { F5 }
 #define ENCODERS_PAD_B { F4 }
