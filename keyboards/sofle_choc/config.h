@@ -27,9 +27,6 @@
 #define ENCODERS_PAD_A_RIGHT { F4 }
 #define ENCODERS_PAD_B_RIGHT { F5 }
 
-// Communication between sides
-#define SOFT_SERIAL_PIN D2
-
 #ifdef RGB_MATRIX_ENABLE
 #define RGB_DI_PIN D3
 #define RGBLED_NUM 29
