@@ -23,9 +23,7 @@ enum sofle_layers {
 };
 
 enum custom_keycodes {
-    KC_LOWER = SAFE_RANGE,
-    KC_RAISE,
-    KC_PRVWD,
+    KC_PRVWD = QK_USER,
     KC_NXTWD,
     KC_LSTRT,
     KC_LEND,
@@ -55,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                       KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_TAB,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                       KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,   KC_MPLY,KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                      KC_LGUI, KC_LALT, KC_LCTL, KC_LOWER,KC_ENT,    KC_SPC, KC_RAISE, KC_RCTL,  KC_RALT, KC_RGUI
+                      KC_LGUI, KC_LALT, KC_LCTL, TL_LOWR, KC_ENT,    KC_SPC, TL_UPPR,  KC_RCTL,  KC_RALT, KC_RGUI
 ),
 /* LOWER
  * ,----------------------------------------.                    ,-----------------------------------------.
@@ -124,24 +122,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_LOWER:
-            if (record->event.pressed) {
-                layer_on(_LOWER);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
-            } else {
-                layer_off(_LOWER);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
-            }
-            return false;
-        case KC_RAISE:
-            if (record->event.pressed) {
-                layer_on(_RAISE);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
-            } else {
-                layer_off(_RAISE);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
-            }
-            return false;
         case KC_PRVWD:
             if (record->event.pressed) {
                 if (keymap_config.swap_lctl_lgui) {
