@@ -29,6 +29,9 @@
 #define SPLIT_USB_DETECT
 #define SPLIT_USB_TIMEOUT 10000
 
+#define OLED_TIMEOUT 10000
+#define OLED_FADE_OUT 1
+
 #ifdef RGB_MATRIX_ENABLE
 
 #define RGB_DISABLE_WHEN_USB_SUSPENDED     // turn off effects when suspended

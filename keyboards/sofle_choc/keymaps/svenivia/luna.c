@@ -193,7 +193,7 @@ void render_luna(int LUNA_X, int LUNA_Y) {
 
         // current status
         if(led_usb_state.caps_lock) {
-            oled_write_raw_P(bark[abs(1 - current_frame)], ANIM_SIZE);
+            if (false) oled_write_raw_P(bark[abs(1 - current_frame)], ANIM_SIZE);
 
         } else if(isSneaking) {
             oled_write_raw_P(sneak[abs(1 - current_frame)], ANIM_SIZE);
@@ -213,16 +213,18 @@ void render_luna(int LUNA_X, int LUNA_Y) {
     if(timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
         anim_timer = timer_read32();
         current_wpm = get_current_wpm();
-        animation_phase();
+        if (timer_elapsed32(anim_sleep) <= OLED_TIMEOUT) {
+            animation_phase();
+        }
     }
 
     // this fixes the screen on and off bug
-    /* if (current_wpm > 0) { */
-    /*     oled_on(); */
-    /*     anim_sleep = timer_read32(); */
-    /* } else if(timer_elapsed32(anim_sleep) > OLED_TIMEOUT) { */
-    /*     oled_off(); */
-    /* } */
+    if (current_wpm > 0) {
+        oled_on();
+        anim_sleep = timer_read32();
+    } else if(timer_elapsed32(anim_sleep) > OLED_TIMEOUT) {
+        oled_off();
+    }
 
 }
 
