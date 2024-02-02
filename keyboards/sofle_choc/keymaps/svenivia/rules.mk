@@ -20,6 +20,8 @@ LTO_ENABLE = yes
 # https://usevia.app
 VIA_ENABLE = no
 TRI_LAYER_ENABLE = yes
+# TAP_DANCE_ENABLE = yes
+CAPS_WORD_ENABLE = yes
 
 # Reduce compiled size
 MOUSEKEY_ENABLE = yes

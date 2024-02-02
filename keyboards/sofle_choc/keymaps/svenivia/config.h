@@ -32,6 +32,8 @@
 #define OLED_TIMEOUT 10000
 #define OLED_FADE_OUT 1
 
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
 #ifdef RGB_MATRIX_ENABLE
 
 #define RGB_DISABLE_WHEN_USB_SUSPENDED     // turn off effects when suspended

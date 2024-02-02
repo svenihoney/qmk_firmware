@@ -115,6 +115,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // clang-format on
 };
 
+static bool mod3_active = false;
+
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     switch (keycode) {
         case KC_PRVWD:
@@ -247,8 +249,46 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                 unregister_mods(mod_config(MOD_LCTL));
             }
             return false;
+        case KC_CAPS:
+        case KC_NUHS:
+            if (record->event.pressed) {
+                mod3_active = true;
+            } else {
+                mod3_active = false;
+            }
+            return true;
         default:
             return true;
+    }
+}
+
+bool caps_word_press_user(uint16_t keycode) {
+    switch (keycode) {
+        // Keycodes that continue Caps Word, with shift applied.
+        case KC_A ... KC_V:
+        case KC_X ... KC_Z:
+        case KC_COMM:
+        case KC_DOT:
+        case KC_SLSH:
+            add_weak_mods(MOD_BIT(KC_LSFT)); // Apply shift to next key.
+            return true;
+        case KC_W:
+            if (!mod3_active) {
+                add_weak_mods(MOD_BIT(KC_LSFT)); // Apply shift to next key.
+            }
+            return true;
+
+        // Keycodes that continue Caps Word, without shifting.
+        case KC_1 ... KC_0:
+        case KC_BSPC:
+        case KC_DEL:
+        case KC_UNDS:
+        case KC_CAPS:
+        case KC_MINS:
+            return true;
+
+        default:
+            return false; // Deactivate Caps Word.
     }
 }
 
