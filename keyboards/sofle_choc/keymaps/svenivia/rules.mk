@@ -1,5 +1,5 @@
-ENCODER_ENABLE = yes
-ENCODER_MAP_ENABLE = yes
+ENCODER_ENABLE = no
+ENCODER_MAP_ENABLE = no
 
 OLED_ENABLE = yes
 OLED_DRIVER_ENABLE = yes
@@ -7,7 +7,7 @@ WPM_ENABLE = yes
 LUNA_ENABLE = yes
 
 # Enable per-key lighting
-# RGB_MATRIX_ENABLE = yes
+RGB_MATRIX_ENABLE = no
 
 # Enable audio keys and system control
 EXTRAKEY_ENABLE = yes
@@ -17,5 +17,11 @@ EXTRAKEY_ENABLE = yes
 LTO_ENABLE = yes
 
 # Change keymaps without flashing
-# https://caniusevia.com/
-VIA_ENABLE = yes
+# https://usevia.app
+VIA_ENABLE = no
+TRI_LAYER_ENABLE = yes
+
+# Reduce compiled size
+MOUSEKEY_ENABLE = yes
+SPACE_CADET_ENABLE = no
+GRAVE_ESC_ENABLE = no
