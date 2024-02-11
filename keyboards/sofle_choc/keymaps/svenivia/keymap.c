@@ -238,7 +238,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                 /* unregister_code(KC_X); */
             }
             return false;
-            return false;
         case KC_UNDO:
             if (record->event.pressed) {
                 // CMD-z on Mac, but we have CTL and GUI swapped
@@ -262,10 +261,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     }
 }
 
+static bool caps_word_active = false;
+
+void caps_word_set_user(bool active) {
+    caps_word_active = active;
+}
+
 bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
         // Keycodes that continue Caps Word, with shift applied.
-        case KC_A ... KC_V:
+        // Skip comma and dot in KOY layout
+        case KC_A ... KC_Q:
+        case KC_S ... KC_V:
         case KC_X ... KC_Z:
         case KC_COMM:
         case KC_DOT:
@@ -273,10 +280,7 @@ bool caps_word_press_user(uint16_t keycode) {
             add_weak_mods(MOD_BIT(KC_LSFT)); // Apply shift to next key.
             return true;
         case KC_W:
-            if (!mod3_active) {
-                add_weak_mods(MOD_BIT(KC_LSFT)); // Apply shift to next key.
-            }
-            return true;
+            return mod3_active; // If MOD3 is pressed, don't leave caps word, is the _
 
         // Keycodes that continue Caps Word, without shifting.
         case KC_1 ... KC_0:
@@ -359,6 +363,8 @@ static void print_status_narrow(void) {
         led_t led_usb_state = host_keyboard_led_state();
         if (led_usb_state.caps_lock) {
             oled_write_ln_P(PSTR(" CAP "), true);
+        } else if (caps_word_active) {
+            oled_write_ln_P(PSTR("CAPWD"), true);
         } else {
             oled_write_ln_P(PSTR("     "), false);
         }
