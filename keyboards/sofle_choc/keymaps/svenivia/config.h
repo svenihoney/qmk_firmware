@@ -27,7 +27,7 @@
 //
 // I've found this helps with some ProMicros where the slave does not boot
 #define SPLIT_USB_DETECT
-/* #define SPLIT_USB_TIMEOUT 3000 */
+#define SPLIT_USB_TIMEOUT 5000
 
 #define OLED_TIMEOUT 10000
 #define OLED_FADE_OUT 1

@@ -277,8 +277,14 @@ bool caps_word_press_user(uint16_t keycode) {
         case KC_COMM:
         case KC_DOT:
         case KC_SLSH:
-            add_weak_mods(MOD_BIT(KC_LSFT)); // Apply shift to next key.
-            return true;
+        case KC_SCLN:
+        case KC_QUOT:
+            if (!mod3_active) {
+                add_weak_mods(MOD_BIT(KC_LSFT)); // Apply shift to next key.
+                return true;
+            } else {
+                return false;
+            }
         case KC_W:
             return mod3_active; // If MOD3 is pressed, don't leave caps word, is the _
 
