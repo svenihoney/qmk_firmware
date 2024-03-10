@@ -1,8 +1,8 @@
 build:
-    util/docker_build.sh sofle_choc:svenivia
+    util/docker_build.sh sofle_choc:sveni
 
 flash:
-    util/docker_build.sh sofle_choc:svenivia:flash
+    util/docker_build.sh sofle_choc:sveni:flash
 
 buildm:
     util/docker_build.sh sofle_choc:svenimiryoku

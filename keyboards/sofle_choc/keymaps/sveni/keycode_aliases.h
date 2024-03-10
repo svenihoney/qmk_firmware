@@ -1,0 +1,6 @@
+#ifndef KEYCODE_ALIASES_H_
+#define KEYCODE_ALIASES_H_
+
+
+
+#endif // KEYCODE_ALIASES_H_
