@@ -30,6 +30,8 @@
 
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
-#define RGB_DISABLE_WHEN_USB_SUSPENDED     // turn off effects when suspended
+#define RGB_MATRIX_SLEEP                   // turn off effects when suspended
 #define SPLIT_TRANSPORT_MIRROR             // If LED_MATRIX_KEYPRESSES or LED_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100  // limits maximum brightness of LEDs (max 255). Higher may cause the controller to crash.
+
+#define SFTENT_KEYS KC_LEFT_SHIFT, KC_TRANSPARENT, SFTENT_KEY
